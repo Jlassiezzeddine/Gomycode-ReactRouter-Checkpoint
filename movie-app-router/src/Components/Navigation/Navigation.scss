@@ -1,0 +1,28 @@
+@import "../../assets/scss/variables";
+.navigation--wrapper {
+  position: fixed;
+  background-color: $light;
+  z-index: 999;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 4px 4px rgba($color: #000000, $alpha: 0.05);
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    .navigation--logo {
+      color: $dark;
+      text-decoration: none;
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
