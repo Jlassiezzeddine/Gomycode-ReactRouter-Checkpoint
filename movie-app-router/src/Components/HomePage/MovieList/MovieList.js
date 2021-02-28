@@ -4,7 +4,7 @@ import React from "react";
 
 import MovieCard from "../MovieCard/MovieCard";
 
-const MovieList = ({ movies, searchTerm, filterValue }) => {
+const MovieList = ({ movies, searchTerm, filterValue, match }) => {
   let filteredMovies = movies.filter(
     (item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -13,7 +13,7 @@ const MovieList = ({ movies, searchTerm, filterValue }) => {
   return (
     <div className="row movie--list--wrapper">
       {filteredMovies.map((movieItem, index) => (
-        <MovieCard key={index} movie={movieItem} />
+        <MovieCard key={index} movie={movieItem} match={match} />
       ))}
     </div>
   );

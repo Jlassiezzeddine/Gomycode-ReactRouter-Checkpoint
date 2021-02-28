@@ -6,12 +6,13 @@ import HomePage from "./Components/HomePage/HomePage";
 import MoviePage from "./Components/MoviePage/MoviePage";
 
 function App() {
+  console.log();
   return (
     <div className="App">
       <Navigation />
+
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/movie" component={MoviePage} />
       </Switch>
     </div>
   );

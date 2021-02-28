@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import "./HomePage.scss";
 import Filter from "./Filter/Filter";
 import Content from "./Content/Content";
-const HomePage = () => {
+const HomePage = ({ match }) => {
   let movies = [
     {
+      id: 1,
       title: "movie one title",
       description: "Movie One Description",
       posterUrl:
@@ -11,6 +13,7 @@ const HomePage = () => {
       rate: 5,
     },
     {
+      id: 2,
       title: "movie two title",
       description: "Movie two Description",
       posterUrl:
@@ -18,6 +21,7 @@ const HomePage = () => {
       rate: 7,
     },
     {
+      id: 3,
       title: "movie three title",
       description: "Movie two Description",
       posterUrl:
@@ -51,6 +55,7 @@ const HomePage = () => {
       />
 
       <Content
+        match={match}
         movies={movieList}
         searchTerm={searchTerm}
         filterValue={filterValue}
