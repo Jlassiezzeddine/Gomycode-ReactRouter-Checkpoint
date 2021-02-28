@@ -1,13 +1,12 @@
 import "./MovieCard.scss";
 
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import MoviePage from "../../MoviePage/MoviePage";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie, match }) => {
   return (
     <div className="col-lg-4 col-md-4 col-sm-6 ">
-      <Link to={`/${movie.id}`}>
+      <Link to={`/movies/${movie.id}`}>
         <div className="movie--card--wrapper">
           <div className="movie--card--img">
             <img src={movie.posterUrl} alt={movie.title} />
@@ -22,9 +21,6 @@ const MovieCard = ({ movie, match }) => {
           </div>
         </div>
       </Link>
-      <Switch>
-        <Route path="/:id" render={() => <MoviePage movie={movie} />} />
-      </Switch>
     </div>
   );
 };
