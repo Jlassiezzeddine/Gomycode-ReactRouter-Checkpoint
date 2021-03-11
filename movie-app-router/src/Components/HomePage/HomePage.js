@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import "./HomePage.scss";
 import Filter from "./Filter/Filter";
 import Content from "./Content/Content";
-const HomePage = ({ movies }) => {
-  const [movieList, setMovieList] = useState(movies);
+const HomePage = ({ movies, addItem }) => {
   const [searchTerm, setSearechTerm] = useState("");
   const [filterValue, setFilterValue] = useState(10);
   const [inputValueDisplay, setInputValueDisplay] = useState(10);
-  const addItem = (newmovie) => {
-    setMovieList([...movieList, newmovie]);
-  };
+
   const rateFilter = (rateValue) => {
     setFilterValue(rateValue);
     setInputValueDisplay(rateValue);
@@ -17,7 +14,7 @@ const HomePage = ({ movies }) => {
   const searchMovie = (search) => {
     setSearechTerm(search);
   };
-
+  console.log(movies);
   return (
     <div className="homePage--wrapper">
       <Filter
@@ -28,7 +25,7 @@ const HomePage = ({ movies }) => {
       />
 
       <Content
-        movies={movieList}
+        movies={movies}
         searchTerm={searchTerm}
         filterValue={filterValue}
       />

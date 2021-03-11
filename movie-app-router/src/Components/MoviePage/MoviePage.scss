@@ -1,0 +1,14 @@
+@import "../../assets/scss/variables";
+.movie-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  color: $light;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.movie-trailer {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}

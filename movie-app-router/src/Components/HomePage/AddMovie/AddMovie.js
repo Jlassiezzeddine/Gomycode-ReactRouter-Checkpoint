@@ -1,15 +1,17 @@
 import "./AddMovie.scss";
 
 import React, { useState } from "react";
+import uuid from "uuid/dist/v4";
 
 const AddMovie = ({ displayAddMovie, addItem }) => {
   const [title, setTitle] = useState("");
   const [posterUrl, setPosterUrl] = useState("");
   const [description, setDescription] = useState("");
+  const [trailer, setTrailer] = useState("");
   const [rate, setRate] = useState(0);
 
   const handleSubmit = (e) => {
-    addItem({ title, posterUrl, description, rate });
+    addItem({ id: uuid(), title, posterUrl, description, trailer, rate });
     displayAddMovie();
     e.preventDefault();
   };
@@ -48,6 +50,15 @@ const AddMovie = ({ displayAddMovie, addItem }) => {
               name="description"
               id="description"
               onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          <div className="form--input">
+            <label htmlFor="trailer">Trailer :</label>
+            <textarea
+              type="text"
+              name="trailer"
+              id="trailer"
+              onChange={(e) => setTrailer(e.target.value)}
             />
           </div>
           <div className="form--input">

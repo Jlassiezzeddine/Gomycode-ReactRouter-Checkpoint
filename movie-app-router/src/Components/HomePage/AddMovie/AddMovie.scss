@@ -1,11 +1,12 @@
 @import "../../../assets/scss/variables";
 
 .add--movie--wrapper {
-  position: absolute;
+  position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgba($color: $grey, $alpha: 0.8);
   display: grid;
   place-items: center;
